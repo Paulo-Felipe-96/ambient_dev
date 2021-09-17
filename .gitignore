@@ -1,2 +1,4 @@
 .vagrant
 .idea
+ssh_keys/
+ssh_private_keys/
