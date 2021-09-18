@@ -1,4 +1,5 @@
 # install apts
-sudo apt-get update
-sudo apt-get install net-tools
-sudo apt-get install nginx -y
+apt-get update
+apt-get install net-tools
+apt-get install -y nginx
+apt-get install -y mysql-server-8.0
