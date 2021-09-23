@@ -36,5 +36,10 @@ Vagrant.configure("2") do |config|
 
     # Desabling default synced folder
     phpweb.vm.synced_folder ".", "/vagrant", disabled: true
+    phpweb.vm.synced_folder "./configs/manifests", "/manifests"
+
+    phpweb.vm.provision "shell", inline: "apt-get purge net-tools -y"
+    phpweb.vm.provision "shell", inline: "apt-get update && apt-get install puppet -y && puppet apply /manifests/phpweb.pp && echo done"
+    phpweb.vm.provision "shell", inline: "netstat -lntp"
   end
 end
